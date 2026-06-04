@@ -1,0 +1,342 @@
+<!doctype html>
+<html>
+  <!-- Bagian Penting Agar Web terbaca oleh Browser -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio Aldo</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- bagian Navbar Atas -->
+    <nav>
+      <h1>Portofolio Aldo</h1>
+
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+      <ul id="navMenu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#belajar">Belajar</a></li>
+        <li><a href="#skill">Skill</a></li>
+        <li><a href="#contact">Contact</a></li>
+
+        <li><button onclick="gantiMode()">Mode</button></li>
+      </ul>
+    </nav>
+
+    <!-- Bagian Hero -->
+
+    <section id="home" class="hero">
+      <div class="hero-kiri">
+        <div class="hero-text">
+          <h2 id="sapaan">Halo... Aku Aldo</h2>
+
+          <p>Aku sedang belajar menjadi web developer</p>
+        </div>
+
+        <div class="jam-container">
+          <div class="jam-dinding">
+            <span class="angka angka12">12</span>
+            <span class="angka angka9">3</span>
+            <span class="angka angka6">6</span>
+            <span class="angka angka3">9</span>
+
+            <div id="jarumJam" class="jarum jam"></div>
+            <div id="jarumMenit" class="jarum menit"></div>
+            <div id="jarumDetik" class="jarum detik"></div>
+
+            <div class="titik"></div>
+          </div>
+
+          <div id="jam" class="jam-digital"></div>
+        </div>
+
+        <div class="calendar-card">
+          <div class="calendar-header">
+            <div>
+              <p class="calendar-label">Kalender</p>
+              <h3 id="calendarMonthLabel">Bulan</h3>
+            </div>
+            <div class="calendar-nav">
+              <button type="button" id="prevMonth" class="calendar-btn">
+                ←
+              </button>
+              <button type="button" id="nextMonth" class="calendar-btn">
+                →
+              </button>
+            </div>
+          </div>
+
+          <div class="calendar-weekdays">
+            <span>Min</span>
+            <span>Sen</span>
+            <span>Sel</span>
+            <span>Rab</span>
+            <span>Kam</span>
+            <span>Jum</span>
+            <span>Sab</span>
+          </div>
+
+          <div id="calendarDays" class="calendar-days"></div>
+
+          <p id="calendarStatus" class="calendar-status">Hari ini</p>
+        </div>
+
+        <button onclick="hubungi()">Hubungi Aku 😘</button>
+      </div>
+
+      <div class="foto-container">
+        <img src="foto coding.jpeg" alt="foto coding" />
+        <img src="fotodiri.jpeg" alt="yang ke 2" />
+        <img src="fotongoding.jpeg" alt="foto diri" />
+      </div>
+    </section>
+
+    <!--Bagian Skill -->
+
+    <section id="skill">
+      <h2>Skill saya :</h2>
+
+      <div class="skill-container">
+        <div class="skill-card">
+          <h3>HTML</h3>
+          <p>Membuat Struktur Website</p>
+
+          <div class="progress">
+            <div class="bar html-bar">90%</div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>CSS</h3>
+          <p>Mengatur Gaya Website</p>
+
+          <div class="progress">
+            <div class="bar css-bar">75%</div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Python</h3>
+          <p>Membuat Program dan Chatbot</p>
+
+          <div class="progress">
+            <div class="bar python-bar">65%</div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Java Script</h3>
+          <p>Membuat progam dan website interaktif</p>
+
+          <div class="progress">
+            <div class="bar javascript-bar">45%</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="seni">
+      <h2>Project Seni</h2>
+
+      <p>
+        Selain belajar coding, saya juga suka membuat karya seni. Berikut adalah
+        beberapa karya seni yang telah saya buat:
+      </p>
+
+      <div class="project-container">
+        <div class="project-card">
+          <h3>MyArtGallery🎨</h3>
+
+          <p>Ini adalah kumpulan karya seni yang saya buat:</p>
+
+          <button
+            onclick="window.open('isi web portofolio/index.html', '_blank')"
+          >
+            Tab Untuk Lihat
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bagian Project -->
+
+    <section id="project">
+      <h2>Project Saya</h2>
+
+      <div class="project-container">
+        <div class="project-card">
+          <h3>Portofolio website</h3>
+          <p>Website portofolio pertama saya</p>
+
+          <button
+            onclick="
+              lihatProject(
+                'Portofolio Website',
+                'Website Portofolio pertama saya',
+                'https://github.com/aldoBigBrother/portofolio-aldo',
+              )
+            "
+          >
+            Lihat
+          </button>
+        </div>
+
+        <div class="project-card">
+          <h3>Chatbot Python</h3>
+          <p>Bot sederhana yang bisa di ajak ngobrol</p>
+
+          <button
+            onclick="
+              lihatProject(
+                'Chatbot Python',
+                'Bot sederhana yang bisa di ajak ngobrol. Masih tahap <strong>perkembangan</strong> & <strong>uji coba</strong>.',
+                'https://github.com/aldoBigBrother/portofolio-aldo',
+              )
+            "
+          >
+            Lihat
+          </button>
+        </div>
+
+        <div class="project-card">
+          <h3>CSS</h3>
+          <p>Membuat tampilan web menjadi menarik</p>
+
+          <button
+            onclick="
+              lihatProject(
+                'CSS',
+                'Membuat tampilan web menjadi menarik. Tahap <strong>pembelajaran!</strong>',
+                'https://github.com/aldoBigBrother',
+              )
+            "
+          >
+            Lihat
+          </button>
+        </div>
+
+        <div class="project-card">
+          <h3>Java Script</h3>
+          <p>Latihan membuat website yang interaktif dan menarik</p>
+
+          <button
+            onclick="
+              lihatProject(
+                'Java Script',
+                'Pembuatan website menarik dan interaktif. Tahap <strong>pembelajaran!</strong>',
+                'https://github.com/aldoBigBrother',
+              )
+            "
+          >
+            Lihat
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabel Belajar -->
+
+    <section id="belajar">
+      <h2>Materi yang di Pelajari :</h2>
+
+      <div id="status">Sedang belajar HTML</div>
+
+      <button onclick="nextBelajar()">Lihat Materi lain</button>
+    </section>
+
+    <!-- Bagian Saran-->
+    <section>
+      <h2>Saran & Masukan</h2>
+
+      <!-- Pembuatan tabel saran -->
+      <form id="saranForm">
+        <label>Nama</label>
+        <br />
+        <input id="nama" type="text" placeholder="Masukan Nama..." />
+
+        <br /><br />
+
+        <label>Email</label>
+        <br />
+        <input id="email" type="email" placeholder="Masukan Email..." />
+
+        <br /><br />
+
+        <label>Pesan</label>
+        <br />
+        <textarea id="pesan" placeholder="Tulis Pesan..."></textarea>
+
+        <br /><br />
+
+        <button type="submit">Kirim</button>
+
+        <div id="notifKirim" class="notif">
+          Pesan mu akan di kirim ke Baginda Aldo, terimakasih atas saran dan
+          masukannya🙏
+        </div>
+      </form>
+    </section>
+
+    <!-- Bagian paling bawah-->
+    <footer>
+      <h3>Salam Hangat...</h3>
+      <p>
+        Terimakasih telah mengunjungi website pertamaku. Jika ada saran dan
+        masukan kalian boleh <strong>hubungi</strong> media sosial di bawah
+        ini👇
+      </p>
+
+      <div id="contact" class="social">
+        <a
+          href="https://www.instagram.com/allodooo?igsh=d2cxc2toY3d6cTd6"
+          target="_blank"
+          ><i class="fa-brands fa-instagram">
+            </i
+        ><br>Instagram</a>
+
+        <a href="mailto:alladulchoiri9@gmail.com" target="_blank"
+          ><i class="fa-solid fa-envelope-open">
+            </i
+        ><br>Email</a>
+
+        <a
+          href="https://wa.me/6281231272481?text=Hallo%20ganteng%21,%20saya%20berkenan%20dengan%20website%20anda"
+          target="_blank"
+          ><i class="fa-brands fa-whatsapp">
+            </i
+        ><br>WhatsApp</a>
+
+        <a href="https://github.com/aldoBigBrother" target="_blank"
+          ><i class="fa-brands fa-github">
+            </i
+        ><br>GitHub</a>
+      </div>
+    </footer>
+
+    <!-- Popup JS -->
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <h3 id="judulPopup"></h3>
+
+        <p id="isiPopup"></p>
+
+        <a id="linkProject" target="_blank" class="github-btn">
+          <button>Kunjungi Github Saya🤗</button>
+        </a>
+
+        <button onclick="tutupPopup()">Tutup beb👌</button>
+      </div>
+    </div>
+
+    <!-- Script JS harus di dalam Body!-->
+    <script src="script.js"></script>
+  </body>
+</html>
